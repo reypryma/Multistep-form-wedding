@@ -1,0 +1,123 @@
+create database Nikah collate Latin1_General_CI_AS
+go
+
+create table BrideFemale
+(
+	id int identity
+		constraint PK_bridefemale
+			primary key,
+	FemaleNIK nvarchar(50),
+	FemaleName nvarchar(150),
+	FemaleBirthPlace nvarchar(150),
+	FemaleBirthDate datetime,
+	FemaleAddress nvarchar(255),
+	FemalePhone nvarchar(50),
+	FemaleCivil nvarchar(50),
+	FemaleReligion nvarchar(50),
+	FemaleWork nvarchar(50),
+	FemaleFatherNIK nvarchar(50),
+	FemaleMotherNIK nvarchar(50)
+)
+go
+
+create table BrideMale
+(
+	id int identity
+		constraint PK_bridemale
+			primary key,
+	PriaNIK nvarchar(50),
+	PriaName nvarchar(150),
+	PriaBirthPlace nvarchar(150),
+	PriaBirthDate datetime,
+	PriaAddress nvarchar(255),
+	PriaPhone nvarchar(50),
+	PriaCivil nvarchar(50),
+	PriaReligion nvarchar(50),
+	PriaWork nvarchar(50),
+	MaleFatherNIK nvarchar(50),
+	MaleMotheNIK nvarchar(50)
+)
+go
+
+create table FemaleFather
+(
+	id int identity
+		constraint PK_femalefather
+			primary key,
+	WanitaFatherNIK nvarchar(50),
+	WanitaFatherName nvarchar(150),
+	WanitaFatherBirthPlace nvarchar(150),
+	WanitaFatherBirthDate datetime,
+	WanitaFatherCivil nvarchar(50),
+	WanitaFatherReligion nvarchar(50)
+)
+go
+
+create table FemaleMother
+(
+	id int identity
+		constraint PK_femalemother
+			primary key,
+	WanitaMotherNIK nvarchar(50),
+	WanitaMotherName nvarchar(50),
+	WanitaMotherBirthPlace nvarchar(150),
+	WanitaMotherBirthDate datetime,
+	WanitaMotherCivil nvarchar(50),
+	WanitaMotherReligion nvarchar(50)
+)
+go
+
+create table MaleFather
+(
+	id int identity
+		constraint PK_malefather
+			primary key,
+	PriaFatherNIK nvarchar(50),
+	PriaFatherName nvarchar(150),
+	PriaFatherBirthPlace nvarchar(150),
+	PriaFatherBirthDate datetime,
+	PriaFatherCivil nvarchar(50),
+	PriaFatherReligion nvarchar(50)
+)
+go
+
+create table MaleMother
+(
+	id int identity
+		constraint PK_malemother
+			primary key,
+	PriaMotherNIK nvarchar(50),
+	PriaMotherName nvarchar(50),
+	PriaMotherBirthPlace nvarchar(150),
+	PriaMotherBirthDate datetime,
+	PriaMotherCivil nvarchar(50),
+	PriaMotherReligion nvarchar(50)
+)
+go
+
+create table Planning
+(
+	id int identity
+		constraint PK_Planning
+			primary key,
+	NikahAddress nvarchar(150),
+	NikahPhone nvarchar(150),
+	NikahDate datetime,
+	NikahDescription nvarchar(250),
+	PasanganPria nvarchar(250),
+	PasanganWanita nvarchar(250),
+	CatatSaksiSatu nvarchar(250),
+	CatatSaksiDua nvarchar(250)
+)
+go
+
+create table Saksi
+(
+	id int identity
+		constraint PK_saksi
+			primary key,
+	SaksiSatuName nvarchar(150),
+	SaksiSatuAddress nvarchar(255),
+	SaksiDuaName nvarchar(150),
+	SaksiDuaAddress nvarchar(255)
+)
