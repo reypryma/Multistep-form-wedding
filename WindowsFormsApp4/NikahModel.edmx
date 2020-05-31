@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NikahModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BrideFemale">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FemaleNIK" Type="nvarchar" MaxLength="50" />
+          <Property Name="FemaleName" Type="nvarchar" MaxLength="150" />
+          <Property Name="FemaleBirthPlace" Type="nvarchar" MaxLength="150" />
+          <Property Name="FemaleBirthDate" Type="datetime" />
+          <Property Name="FemaleAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="FemalePhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="FemaleCivil" Type="nvarchar" MaxLength="50" />
+          <Property Name="FemaleReligion" Type="nvarchar" MaxLength="50" />
+          <Property Name="FemaleWork" Type="nvarchar" MaxLength="50" />
+          <Property Name="FemaleFatherNIK" Type="nvarchar" MaxLength="50" />
+          <Property Name="FemaleMotherNIK" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BrideMale">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PriaNIK" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriaName" Type="nvarchar" MaxLength="150" />
+          <Property Name="PriaBirthPlace" Type="nvarchar" MaxLength="150" />
+          <Property Name="PriaBirthDate" Type="datetime" />
+          <Property Name="PriaAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="PriaPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriaCivil" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriaReligion" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriaWork" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaleFatherNIK" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaleMotheNIK" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FemaleFather">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WanitaFatherNIK" Type="nvarchar" MaxLength="50" />
+          <Property Name="WanitaFatherName" Type="nvarchar" MaxLength="150" />
+          <Property Name="WanitaFatherBirthPlace" Type="nvarchar" MaxLength="150" />
+          <Property Name="WanitaFatherBirthDate" Type="datetime" />
+          <Property Name="WanitaFatherCivil" Type="nvarchar" MaxLength="50" />
+          <Property Name="WanitaFatherReligion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FemaleMother">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WanitaMotherNIK" Type="nvarchar" MaxLength="50" />
+          <Property Name="WanitaMotherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="WanitaMotherBirthPlace" Type="nvarchar" MaxLength="150" />
+          <Property Name="WanitaMotherBirthDate" Type="datetime" />
+          <Property Name="WanitaMotherCivil" Type="nvarchar" MaxLength="50" />
+          <Property Name="WanitaMotherReligion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MaleFather">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PriaFatherNIK" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriaFatherName" Type="nvarchar" MaxLength="150" />
+          <Property Name="PriaFatherBirthPlace" Type="nvarchar" MaxLength="150" />
+          <Property Name="PriaFatherBirthDate" Type="datetime" />
+          <Property Name="PriaFatherCivil" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriaFatherReligion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MaleMother">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PriaMotherNIK" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriaMotherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriaMotherBirthPlace" Type="nvarchar" MaxLength="150" />
+          <Property Name="PriaMotherBirthDate" Type="datetime" />
+          <Property Name="PriaMotherCivil" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriaMotherReligion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Planning">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NikahAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="NikahPhone" Type="nvarchar" MaxLength="150" />
+          <Property Name="NikahDate" Type="datetime" />
+          <Property Name="NikahDescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="PasanganPria" Type="nvarchar" MaxLength="250" />
+          <Property Name="PasanganWanita" Type="nvarchar" MaxLength="250" />
+          <Property Name="CatatSaksiSatu" Type="nvarchar" MaxLength="250" />
+          <Property Name="CatatSaksiDua" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Saksi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SaksiSatuName" Type="nvarchar" MaxLength="150" />
+          <Property Name="SaksiSatuAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="SaksiDuaName" Type="nvarchar" MaxLength="150" />
+          <Property Name="SaksiDuaAddress" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="NikahModelStoreContainer">
+          <EntitySet Name="BrideFemale" EntityType="Self.BrideFemale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BrideMale" EntityType="Self.BrideMale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FemaleFather" EntityType="Self.FemaleFather" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FemaleMother" EntityType="Self.FemaleMother" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaleFather" EntityType="Self.MaleFather" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaleMother" EntityType="Self.MaleMother" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Planning" EntityType="Self.Planning" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Saksi" EntityType="Self.Saksi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NikahModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BrideFemale">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FemaleNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FemaleName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FemaleBirthPlace" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FemaleBirthDate" Type="DateTime" Precision="3" />
+          <Property Name="FemaleAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FemalePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FemaleCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FemaleReligion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FemaleWork" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FemaleFatherNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FemaleMotherNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BrideMale">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PriaNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriaName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PriaBirthPlace" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PriaBirthDate" Type="DateTime" Precision="3" />
+          <Property Name="PriaAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PriaPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriaCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriaReligion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriaWork" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaleFatherNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaleMotheNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FemaleFather">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WanitaFatherNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WanitaFatherName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="WanitaFatherBirthPlace" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="WanitaFatherBirthDate" Type="DateTime" Precision="3" />
+          <Property Name="WanitaFatherCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WanitaFatherReligion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FemaleMother">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WanitaMotherNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WanitaMotherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WanitaMotherBirthPlace" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="WanitaMotherBirthDate" Type="DateTime" Precision="3" />
+          <Property Name="WanitaMotherCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WanitaMotherReligion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaleFather">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PriaFatherNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriaFatherName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PriaFatherBirthPlace" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PriaFatherBirthDate" Type="DateTime" Precision="3" />
+          <Property Name="PriaFatherCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriaFatherReligion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaleMother">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PriaMotherNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriaMotherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriaMotherBirthPlace" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PriaMotherBirthDate" Type="DateTime" Precision="3" />
+          <Property Name="PriaMotherCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriaMotherReligion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Planning">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NikahAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NikahPhone" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NikahDate" Type="DateTime" Precision="3" />
+          <Property Name="NikahDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PasanganPria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PasanganWanita" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CatatSaksiSatu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CatatSaksiDua" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Saksi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaksiSatuName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SaksiSatuAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SaksiDuaName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SaksiDuaAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="NikahEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BrideFemales" EntityType="Self.BrideFemale" />
+          <EntitySet Name="BrideMales" EntityType="Self.BrideMale" />
+          <EntitySet Name="FemaleFathers" EntityType="Self.FemaleFather" />
+          <EntitySet Name="FemaleMothers" EntityType="Self.FemaleMother" />
+          <EntitySet Name="MaleFathers" EntityType="Self.MaleFather" />
+          <EntitySet Name="MaleMothers" EntityType="Self.MaleMother" />
+          <EntitySet Name="Plannings" EntityType="Self.Planning" />
+          <EntitySet Name="Saksis" EntityType="Self.Saksi" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NikahModelStoreContainer" CdmEntityContainer="NikahEntities">
+          <EntitySetMapping Name="BrideFemales">
+            <EntityTypeMapping TypeName="NikahModel.BrideFemale">
+              <MappingFragment StoreEntitySet="BrideFemale">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="FemaleNIK" ColumnName="FemaleNIK" />
+                <ScalarProperty Name="FemaleName" ColumnName="FemaleName" />
+                <ScalarProperty Name="FemaleBirthPlace" ColumnName="FemaleBirthPlace" />
+                <ScalarProperty Name="FemaleBirthDate" ColumnName="FemaleBirthDate" />
+                <ScalarProperty Name="FemaleAddress" ColumnName="FemaleAddress" />
+                <ScalarProperty Name="FemalePhone" ColumnName="FemalePhone" />
+                <ScalarProperty Name="FemaleCivil" ColumnName="FemaleCivil" />
+                <ScalarProperty Name="FemaleReligion" ColumnName="FemaleReligion" />
+                <ScalarProperty Name="FemaleWork" ColumnName="FemaleWork" />
+                <ScalarProperty Name="FemaleFatherNIK" ColumnName="FemaleFatherNIK" />
+                <ScalarProperty Name="FemaleMotherNIK" ColumnName="FemaleMotherNIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BrideMales">
+            <EntityTypeMapping TypeName="NikahModel.BrideMale">
+              <MappingFragment StoreEntitySet="BrideMale">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PriaNIK" ColumnName="PriaNIK" />
+                <ScalarProperty Name="PriaName" ColumnName="PriaName" />
+                <ScalarProperty Name="PriaBirthPlace" ColumnName="PriaBirthPlace" />
+                <ScalarProperty Name="PriaBirthDate" ColumnName="PriaBirthDate" />
+                <ScalarProperty Name="PriaAddress" ColumnName="PriaAddress" />
+                <ScalarProperty Name="PriaPhone" ColumnName="PriaPhone" />
+                <ScalarProperty Name="PriaCivil" ColumnName="PriaCivil" />
+                <ScalarProperty Name="PriaReligion" ColumnName="PriaReligion" />
+                <ScalarProperty Name="PriaWork" ColumnName="PriaWork" />
+                <ScalarProperty Name="MaleFatherNIK" ColumnName="MaleFatherNIK" />
+                <ScalarProperty Name="MaleMotheNIK" ColumnName="MaleMotheNIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FemaleFathers">
+            <EntityTypeMapping TypeName="NikahModel.FemaleFather">
+              <MappingFragment StoreEntitySet="FemaleFather">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="WanitaFatherNIK" ColumnName="WanitaFatherNIK" />
+                <ScalarProperty Name="WanitaFatherName" ColumnName="WanitaFatherName" />
+                <ScalarProperty Name="WanitaFatherBirthPlace" ColumnName="WanitaFatherBirthPlace" />
+                <ScalarProperty Name="WanitaFatherBirthDate" ColumnName="WanitaFatherBirthDate" />
+                <ScalarProperty Name="WanitaFatherCivil" ColumnName="WanitaFatherCivil" />
+                <ScalarProperty Name="WanitaFatherReligion" ColumnName="WanitaFatherReligion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FemaleMothers">
+            <EntityTypeMapping TypeName="NikahModel.FemaleMother">
+              <MappingFragment StoreEntitySet="FemaleMother">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="WanitaMotherNIK" ColumnName="WanitaMotherNIK" />
+                <ScalarProperty Name="WanitaMotherName" ColumnName="WanitaMotherName" />
+                <ScalarProperty Name="WanitaMotherBirthPlace" ColumnName="WanitaMotherBirthPlace" />
+                <ScalarProperty Name="WanitaMotherBirthDate" ColumnName="WanitaMotherBirthDate" />
+                <ScalarProperty Name="WanitaMotherCivil" ColumnName="WanitaMotherCivil" />
+                <ScalarProperty Name="WanitaMotherReligion" ColumnName="WanitaMotherReligion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaleFathers">
+            <EntityTypeMapping TypeName="NikahModel.MaleFather">
+              <MappingFragment StoreEntitySet="MaleFather">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PriaFatherNIK" ColumnName="PriaFatherNIK" />
+                <ScalarProperty Name="PriaFatherName" ColumnName="PriaFatherName" />
+                <ScalarProperty Name="PriaFatherBirthPlace" ColumnName="PriaFatherBirthPlace" />
+                <ScalarProperty Name="PriaFatherBirthDate" ColumnName="PriaFatherBirthDate" />
+                <ScalarProperty Name="PriaFatherCivil" ColumnName="PriaFatherCivil" />
+                <ScalarProperty Name="PriaFatherReligion" ColumnName="PriaFatherReligion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaleMothers">
+            <EntityTypeMapping TypeName="NikahModel.MaleMother">
+              <MappingFragment StoreEntitySet="MaleMother">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PriaMotherNIK" ColumnName="PriaMotherNIK" />
+                <ScalarProperty Name="PriaMotherName" ColumnName="PriaMotherName" />
+                <ScalarProperty Name="PriaMotherBirthPlace" ColumnName="PriaMotherBirthPlace" />
+                <ScalarProperty Name="PriaMotherBirthDate" ColumnName="PriaMotherBirthDate" />
+                <ScalarProperty Name="PriaMotherCivil" ColumnName="PriaMotherCivil" />
+                <ScalarProperty Name="PriaMotherReligion" ColumnName="PriaMotherReligion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plannings">
+            <EntityTypeMapping TypeName="NikahModel.Planning">
+              <MappingFragment StoreEntitySet="Planning">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="NikahAddress" ColumnName="NikahAddress" />
+                <ScalarProperty Name="NikahPhone" ColumnName="NikahPhone" />
+                <ScalarProperty Name="NikahDate" ColumnName="NikahDate" />
+                <ScalarProperty Name="NikahDescription" ColumnName="NikahDescription" />
+                <ScalarProperty Name="PasanganPria" ColumnName="PasanganPria" />
+                <ScalarProperty Name="PasanganWanita" ColumnName="PasanganWanita" />
+                <ScalarProperty Name="CatatSaksiSatu" ColumnName="CatatSaksiSatu" />
+                <ScalarProperty Name="CatatSaksiDua" ColumnName="CatatSaksiDua" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Saksis">
+            <EntityTypeMapping TypeName="NikahModel.Saksi">
+              <MappingFragment StoreEntitySet="Saksi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="SaksiSatuName" ColumnName="SaksiSatuName" />
+                <ScalarProperty Name="SaksiSatuAddress" ColumnName="SaksiSatuAddress" />
+                <ScalarProperty Name="SaksiDuaName" ColumnName="SaksiDuaName" />
+                <ScalarProperty Name="SaksiDuaAddress" ColumnName="SaksiDuaAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="NikahModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
